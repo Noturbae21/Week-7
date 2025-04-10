@@ -14,7 +14,7 @@ public class DontolRuleTheWorld{
         System.out.println("Jendral Adit: \"Oke " + nama + ", apakah kamu bersedia untuk membantuku menjalankan misi rahasia?\"");
         System.out.println("1. Ya, saya bersedia");
         System.out.println("2. Ga mau, malas");
-        System.out.println("3. *Gebukin Adit*");
+        System.out.println("3. *Menggulingkan presiden*");
 
         System.out.print("> ");
         int pilihan1 = scanner.nextInt();
