@@ -4,9 +4,9 @@ public class Main {
     public static void main(String[] args) {
 
         // ENDING SCENES
-        Scene endingGood = new Scene("Kamu keluar sebagai pemenang sejati.");
-        Scene endingNeutral = new Scene("Kamu duduk merenung. Dunia tetap misteri.");
-        Scene endingBad = new Scene("Kamu tersesat dan tidak pernah kembali.");
+        Scene endingGood = new Scene("Dennis diadili oleh adit.");
+        Scene endingNeutral = new Scene("Dunia akan kembali menghadapi konflik.");
+        Scene endingBad = new Scene("dennis wafat dan meninggalkan misteri.");
 
         // SCENE 10
         Scene scene10 = new Scene(
