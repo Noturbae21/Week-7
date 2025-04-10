@@ -6,7 +6,7 @@ public class DontolRuleTheWorld{
         
         // Scene 1
 
-        System.out.println("📞  Kamu mendapat panggilan dari Jendral Besar Adit.");
+        System.out.println("📞  Kamu mendapat panggilan dari Jendral Besar a");
         System.out.println("Kamu tiba di ruangan jendral...");
         System.out.print("Jendral Adit: \"Siapa nama kamu, prajurit?\" > ");
         String nama = scanner.nextLine();
@@ -70,5 +70,9 @@ public class DontolRuleTheWorld{
 
         System.out.println("\n✅ Scene 3 selesai. Misi berlanjut...");
         // Lanjut ke Scene 4 kalau mau
+        // tes tes
+
+        System.out.println("Kamu berhasil menyusup ke dalam base Denis. Sekarang kamu harus mencari Denis.");
+        System.out.println("1. Cari di ruang kontrol");
     }
 }
