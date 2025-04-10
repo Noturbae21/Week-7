@@ -2,17 +2,23 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        // ENDING SCENES
+        Scene endingGood = new Scene("Kamu keluar sebagai pemenang sejati.");
+        Scene endingNeutral = new Scene("Kamu duduk merenung. Dunia tetap misteri.");
+        Scene endingBad = new Scene("Kamu tersesat dan tidak pernah kembali.");
+
         // SCENE 10
         Scene scene10 = new Scene(
                 "Kamu dan rekanmu berhasil mengikuti Dennis ke luar Mall lalu memojokkannya. Rekanmu bertanya “Kita apakan dia”",
-                "1. Bawa kembali ke Jenderal Adit", null, 0, 20,
-                "2. Hilangkan nyawa Dennis di tempat", null, 10, 10,
-                "3. Biarkan dia kabur karena kamu terlalu baik", null, 0, 0
+                "1. Bawa kembali ke Jenderal Adit", endingGood, 0, 20,
+                "2. Hilangkan nyawa Dennis di tempat", endingBad, 10, 10,
+                "3. Biarkan dia kabur karena kamu terlalu baik", endingNeutral, 0, 0
         );
 
         // SCENE 9
         Scene scene9 = new Scene(
-                "Kamu mendapat pesan dari jenderal adit bahwa ada rekan yang bisa kamu ajak kerja sama.",
+                "Kamu mendapat pesan dari jenderal adit bahwa ada rekan yang bis~a kamu ajak kerja sama.",
                 "1. Suruh rekan antri Starbucks", scene10, 0, 0,
                 "2. Minta bantuan rekan untuk membuntuti Dennis", scene10, 0, 15,
                 "3. Ikuti Dennis sendiri", scene10, 10, 5

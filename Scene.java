@@ -1,53 +1,42 @@
 public class Scene {
-    private String description;
-    private String choiceA, choiceB, choiceC;
-    private Scene nextSceneA, nextSceneB, nextSceneC;
-    private int damageA, damageB, damageC;
-    private int XPA, XPB, XPC;
+    String description;
+    String option1Text;
+    Scene option1Scene;
+    int option1Damage;
+    int option1Score;
+
+    String option2Text;
+    Scene option2Scene;
+    int option2Damage;
+    int option2Score;
+
+    String option3Text;
+    Scene option3Scene;
+    int option3Damage;
+    int option3Score;
+
+    public Scene(String description) {
+        this.description = description;
+    }
 
     public Scene(String description,
-                 String choiceA, Scene nextSceneA, int damageA, int XPA,
-                 String choiceB, Scene nextSceneB, int damageB, int XPB,
-                 String choiceC, Scene nextSceneC, int damageC, int XPC) {
+                 String option1Text, Scene option1Scene, int option1Damage, int option1Score,
+                 String option2Text, Scene option2Scene, int option2Damage, int option2Score,
+                 String option3Text, Scene option3Scene, int option3Damage, int option3Score) {
         this.description = description;
-        this.choiceA = choiceA;
-        this.nextSceneA = nextSceneA;
-        this.damageA = damageA;
-        this.XPA = XPA;
-        this.choiceB = choiceB;
-        this.nextSceneB = nextSceneB;
-        this.damageB = damageB;
-        this.XPB = XPB;
-        this.choiceC = choiceC;
-        this.nextSceneC = nextSceneC;
-        this.damageC = damageC;
-        this.XPC = XPC;
-    }
+        this.option1Text = option1Text;
+        this.option1Scene = option1Scene;
+        this.option1Damage = option1Damage;
+        this.option1Score = option1Score;
 
-    public void displayScene() {
-        System.out.println("\n" + description);
-        System.out.println("A. " + choiceA);
-        System.out.println("B. " + choiceB);
-        System.out.println("C. " + choiceC);
-    }
+        this.option2Text = option2Text;
+        this.option2Scene = option2Scene;
+        this.option2Damage = option2Damage;
+        this.option2Score = option2Score;
 
-    public Scene makeChoice(String choice, Character player) {
-        switch (choice.toUpperCase()) {
-            case "A":
-                player.takeDamage(damageA);
-                player.addXP(XPA);
-                return nextSceneA;
-            case "B":
-                player.takeDamage(damageB);
-                player.addXP(XPB);
-                return nextSceneB;
-            case "C":
-                player.takeDamage(damageC);
-                player.addXP(XPC);
-                return nextSceneC;
-            default:
-                System.out.println("Pilihan tidak valid. Coba lagi.");
-                return null;
-        }
+        this.option3Text = option3Text;
+        this.option3Scene = option3Scene;
+        this.option3Damage = option3Damage;
+        this.option3Score = option3Score;
     }
 }
