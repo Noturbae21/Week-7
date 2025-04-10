@@ -1,3 +1,7 @@
-public class dontol {
-    
+public class dontol{
+public static void main(String[] args) {
+
+
+
+    }
 }
