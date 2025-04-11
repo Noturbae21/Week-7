@@ -19,10 +19,10 @@ public class Main {
         Character player = new Character(playerName, 100);
 
         // ENDING
-        Scene endingGood = new Scene("Dennis diadili oleh Adit. Dunia diselamatkan.\nEnding Baik!");
-        Scene endingNeutral = new Scene("Dennis kabur. Dunia tetap dalam bayang misteri.\nEnding Netral.");
-        Scene endingBad = new Scene("Dennis wafat... dan menyisakan kekacauan global.\nEnding Buruk.");
-        Scene endingAneh = new Scene("Kamu dijadikan LEGO dan diolah jadi pakan lele.\nEnding Aneh.");
+        Scene endingGood = new Scene("======Dennis diadili oleh Adit. Dunia diselamatkan======\nEnding Baik!");
+        Scene endingNeutral = new Scene("======Dennis kabur. Dunia tetap dalam bayang misteri======\nEnding Netral.");
+        Scene endingBad = new Scene("======Dennis wafat... dan menyisakan kekacauan global======\nEnding Buruk.");
+        Scene endingAneh = new Scene("======Kamu dijadikan LEGO dan diolah jadi pakan lele======\nEnding Aneh.");
 
         // SCENE 10
         Scene scene10 = new Scene("Kamu dan rekanmu berhasil mengikuti Dennis ke luar Mall lalu memojokkannya. Rekanmu pun bertanya 'Kita apakan dia'",
@@ -31,7 +31,7 @@ public class Main {
                 "Biarkan dia kabur karena kamu terlalu baik", endingNeutral, 0, 0);
         
         // SCENE 9
-        Scene scene9 = new Scene("Kamu mendapat pesan dari jenderal Adit bahwa ada rekan yang bisa kamu ajak kerja sama.",
+        Scene scene9 = new Scene("Kamu mendapat pesan dari jenderal Adit bahwa ada rekan yang bisa kamu ajak kerja sama.\nkamu pun bertemu dengan rekan yang dimaksud",
                 "Suruh rekan antri Starbucks", scene10, 20, 0,
                 "Minta bantuan rekan untuk membuntuti Dennis", scene10, 20, 15,
                 "Ikuti Dennis sendiri", scene10, 10, 5);
@@ -49,7 +49,7 @@ public class Main {
                 "Jalan kaki ke Ramayana", scene8, 20, 5);
 
         // SCENE 6
-        Scene scene6 = new Scene("Kamu melanjutkan pencarian Dennis. Dia tidak ada di kantor.",
+        Scene scene6 = new Scene("Kamu melanjutkan pencarian Dennis. Dia tidak ada di kantor.\n kamu memiliki beberapa opsi untuk menggali informasi",
                 "Lihat LOG presensi", scene7, 0, 5,
                 "Interogasi penjaga", scene7, 5, 10,
                 "Teriak lewat speaker", scene7, 20, 0);
@@ -61,7 +61,7 @@ public class Main {
                 "Tembak lampu & pakai night vision", scene6, 0, 20);
 
         // SCENE 4
-        Scene scene4 = new Scene("Kamu tiba di dalam base, ada 3 jalur.",
+        Scene scene4 = new Scene("Kamu tiba di dalam base.\n kamu kebingungan dengan daerah tersebut dan ada 3 jalur",
                 "Kiri (ambil shotgun)", scene5, 0, 10,
                 "Tengah (santai)", scene5, 20, 0,
                 "Kanan (gelap, aktifkan night vision)", scene5, 5, 5);
@@ -69,7 +69,7 @@ public class Main {
         scene4.setItemForChoices("Shotgun", null, null);
 
         // SCENE 3
-        Scene scene3 = new Scene("Kamu tiba di Outer base Dennis, ada dua penjaga.",
+        Scene scene3 = new Scene("Kamu tiba di Outer base Dennis, ada dua penjaga terlihat dari kejauhan.",
                 "Headshot ala COD", scene4, 10, 10,
                 "Cari jalan lain", scene4, 20, 5,
                 "Lewat atap dengan grappling hook", scene4, 0, 10);
