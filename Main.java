@@ -10,6 +10,11 @@ public class Main {
 
                 ------- Masukkan nama karaktermu: """);
 
+
+                // dimulai dari scene 10 karena, jika scene 1 didahulukan dan lanjut scene 2,
+                // scene 2 tidak terbaca karena beum di deklarasi
+
+
         String playerName = input.nextLine();
         Character player = new Character(playerName, 100);
 
