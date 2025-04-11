@@ -7,10 +7,11 @@ public class Main {
         Scene endingGood = new Scene("Dennis diadili oleh adit.");
         Scene endingNeutral = new Scene("Dunia akan kembali menghadapi konflik.");
         Scene endingBad = new Scene("dennis wafat dan meninggalkan misteri.");
+        Scene endingAneh = new Scene("Kamu pun dijadikan lego oleh orang orang di sana dan diolah jadi pakan lele");
 
         // SCENE 10
         Scene scene10 = new Scene(
-                "Kamu dan rekanmu berhasil mengikuti Dennis ke luar Mall lalu memojokkannya. Rekanmu bertanya “Kita apakan dia”",
+                "Kamu dan rekanmu berhasil mengikuti Dennis ke luar Mall lalu memojokkannya. Rekanmu pun bertanya “Kita apakan dia”",
                 "1. Bawa kembali ke Jenderal Adit", endingGood, 0, 20,
                 "2. Hilangkan nyawa Dennis di tempat", endingBad, 10, 10,
                 "3. Biarkan dia kabur karena kamu terlalu baik", endingNeutral, 0, 0
@@ -34,18 +35,18 @@ public class Main {
 
         // SCENE 7
         Scene scene7 = new Scene(
-                "Dennis ternyata ada di Ramayana Bungurasih beli nastar.",
-                "1. Kembali lapor ke Jenderal Adit", scene8, 0, 0,
+                "Dennis ternyata ada di Ramayana Bungurasih beli nastar.... \n\nSungguh aneh melihat orang seperti dia jalan jalan di tempat umum pikirmu",
+                "1. Kembali lapor ke Jenderal Adit dan minta kendaraan", scene8, 0, 0,
                 "2. Curi kendaraan musuh dan kejar Dennis", scene8, 0, 10,
                 "3. Jalan kaki ke Ramayana", scene8, 5, 5
         );
 
         // SCENE 6
         Scene scene6 = new Scene(
-                "Kamu melanjutkan pencarian Dennis.",
+                "Kamu melanjutkan pencarian Dennis. Dia tidak ada di kantor dan kamu pun berusaha menggali Informasi",
                 "1. Lihat LOG presensi", scene7, 0, 5,
                 "2. Interogasi penjaga", scene7, 5, 10,
-                "3. Teriak lewat speaker", scene7, 10, 0
+                "3. Teriak lewat speaker", scene7, 10,0
         );
 
         // SCENE 5
@@ -74,22 +75,27 @@ public class Main {
 
         // SCENE 2
         Scene scene2 = new Scene(
-                "Kamu di helikopter menuju base Dennis.",
-                "1. Loncat sekarang", null, 100, 0,
+                """
+                Kamu mendapatkan sesuatu: .Kamu berankat naik helikopter sesuai lokasi yang ditandai Jenderal Adit
+                 sesampainya di sana kamu mencari cara untuk""",
+                "1. Loncat sekarang", scene3, 100, 0,
                 "2. Tunggu mendarat", scene3, 0, 0,
                 "3. Ngeteh dulu gassih", scene3, 0, 10
         );
 
         // SCENE 1
         Scene scene1 = new Scene(
-                "Kamu dipanggil Jenderal Adit dan ditanya apakah mau ikut misi rahasia.",
+                "Jadi kamu anak baru ya, jadi dengarkan aku dunia sedang tidak baik baik saja. konflik dan tangisan adalah sarapan sehari-hari...\ntugasmu adalah menangkap Dennis, dia adalah kunci untuk menyelesaikan konflik ini" ,
                 "1. Ya, saya bersedia", scene2, 0, 0,
-                "2. Ga mau malas", null, 0, 0,
-                "3. Gebukin Adit (dituduh mata-mata)", null, 50, 0
+                "2. Ga mau malas", scene2, 0, 0,
+                "3. Gebukin Adit (dituduh mata-mata)", endingAneh, 50, 0
         );
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Masukkan nama karaktermu: ");
+        System.out.print("""
+                          Kamu berapa di sebuah ruangan yang sangat gelap dengan lampu yang sangat terang, menyorot ke matamu dan..... \n\nseseorang berkata "Hey beritahu aku siapa kamu"
+                         
+                          ------- Masukkan nama karaktermu: -----------""");
         String playerName = input.nextLine();
 
         Character player = new Character(playerName, 100);

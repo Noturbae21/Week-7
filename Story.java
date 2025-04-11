@@ -42,7 +42,7 @@ public class Story {
                     System.out.println("Pilihan tidak valid.");
             }
 
-            System.out.println("❤️ HP: " + player.health + " | ⭐ Skor: " + player.score);
+            System.out.println("❤️ HP: " + player.health + " | ⭐ Skor: " + player.Xp);
 
             if (player.health <= 0) {
                 System.out.println("Kamu kehabisan HP! GAME OVER.");
@@ -52,7 +52,8 @@ public class Story {
 
         System.out.println("\n=== AKHIR PERMAINAN ===");
         System.out.println("Nama: " + player.name);
-        System.out.println("Skor akhir: " + player.score);
+        System.out.println("Skor akhir: " + player.Xp);
         System.out.println("HP akhir: " + player.health);
+        System.out.println("Item akhir: " + player.Item);
     }
 }
