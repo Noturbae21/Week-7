@@ -24,9 +24,9 @@ public class Main {
         Character player = new Character(playerName, 100);
 
         // ENDING
-        Scene endingGood = new Scene("======Dennis diadili oleh Adit. Dunia diselamatkan======\nEnding Baik!");
+        Scene endingGood = new Scene("======Dennis diadili oleh Adit. Dunia diselamatkan, Kamu pun ngopi di pinggiran sambil Ngangkang======\nEnding Baik!");
         Scene endingNeutral = new Scene("======Dennis kabur. Dunia tetap dalam bayang misteri======\nEnding Netral.");
-        Scene endingBad = new Scene("======Dennis wafat... dan menyisakan kekacauan global======\nEnding Buruk.");
+        Scene endingBad = new Scene("======Dennis wafat... dan menyisakan kekacauan global, dan antek antek nya masih berkeliaran======\nEnding Buruk.");
         Scene endingAneh = new Scene("======Kamu dijadikan LEGO dan diolah jadi pakan lele======\nEnding Aneh.");
 
         // SCENE 10
