@@ -3,6 +3,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+
+        // Memperkenalkan karakter  
+        //narasi dari awal permainan 
+        //INput nama karter juga
+
         System.out.print("""
                 Kamu berada di sebuah ruangan yang sangat gelap dengan lampu yang sangat terang, menyorot ke matamu dan.....
 
@@ -14,7 +19,7 @@ public class Main {
                 // dimulai dari scene 10 karena, jika scene 1 didahulukan dan lanjut scene 2,
                 // scene 2 tidak terbaca karena beum di deklarasi
 
-
+        // Input nama karakter
         String playerName = input.nextLine();
         Character player = new Character(playerName, 100);
 
@@ -55,9 +60,9 @@ public class Main {
                 "Teriak lewat speaker", scene7, 20, 0);
 
         // SCENE 5
-        Scene scene5 = new Scene("Alarm berbunyi! 3 penjaga berlari ke arahmu!",
+        Scene scene5 = new Scene("Alarm berbunyi! 3 penjaga berlari ke arahmu! (Panik panik woi)",
                 "Sembunyi di ruangan server", scene6, 0, 0,
-                "Lempar flashbang & headshot", scene6, 5, 15,
+                "Lempar flashbang & headshot ala player cod propeler", scene6, 5, 15,
                 "Tembak lampu & pakai night vision", scene6, 0, 20);
 
         // SCENE 4
@@ -69,27 +74,27 @@ public class Main {
         scene4.setItemForChoices("Shotgun", null, null);
 
         // SCENE 3
-        Scene scene3 = new Scene("Kamu tiba di Outer base Dennis, ada dua penjaga terlihat dari kejauhan.",
+        Scene scene3 = new Scene("Kamu tiba di Outer base Dennis, ada dua penjaga terlihat dari kejauhan berdiri didepan pintu base",
                 "Headshot ala COD", scene4, 10, 10,
                 "Cari jalan lain", scene4, 20, 5,
                 "Lewat atap dengan grappling hook", scene4, 0, 10);
 
         // SCENE 2
-        Scene scene2 = new Scene("Kamu berangkat naik helikopter menuju lokasi musuh.",
+        Scene scene2 = new Scene("Kamu berangkat naik helikopter menuju lokasi musuh (base dontol).",
                 "Loncat sekarang", null, 100, 0,
                 "Tunggu mendarat", scene3, 0, 10,
                 "Ngeteh dulu gasih", scene3, 0, 10);
 
         // SCENE 1
-        Scene scene1 = new Scene("Jadi kamu anak baru ya. Dunia sedang kacau. Tugasmu: tangkap Dennis.",
+        Scene scene1 = new Scene("Jadi kamu anak baru ya .Panggil aku jendarl adit bintang 5, Sekarang Dunia sedang kacau. Bisakah kamu membantu saya untuk nangkep kriminal kelas kakap yg bernama dontol AKA DENIS?.",
                 "Ya, saya bersedia", scene2, 0, 0,
-                "Ga mau malas", endingAneh, 90, 0,
+                "Ga mau malas mau turu", endingAneh, 90, 0,
                 "Gebukin Adit (dituduh mata-mata)", endingAneh, 90, 0);
 
         scene1.setItemForChoices("USP 45", null, null);
 
-        // Start Game
+        // Start Game dengan scene1 dan karakter player
         Story game = new Story(scene1, player);
-        game.start();
+        game.start(); // start game
     }
 }
