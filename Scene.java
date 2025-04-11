@@ -1,42 +1,80 @@
 public class Scene {
-    String description;
-    String option1Text;
-    Scene option1Scene;
-    int option1Damage;
-    int option1Score;
+    private String description;
+    private String choiceA, choiceB, choiceC;
+    private Scene nextSceneA, nextSceneB, nextSceneC;
+    private int damageA, damageB, damageC;
+    private int XPA, XPB, XPC;
+    private String itemA, itemB, itemC;
 
-    String option2Text;
-    Scene option2Scene;
-    int option2Damage;
-    int option2Score;
-
-    String option3Text;
-    Scene option3Scene;
-    int option3Damage;
-    int option3Score;
-
-    public Scene(String description) {
+    // Constructor untuk scene biasa
+    public Scene(String description,
+                 String choiceA, Scene nextSceneA, int damageA, int XPA,
+                 String choiceB, Scene nextSceneB, int damageB, int XPB,
+                 String choiceC, Scene nextSceneC, int damageC, int XPC) {
         this.description = description;
+        this.choiceA = choiceA;
+        this.nextSceneA = nextSceneA;
+        this.damageA = damageA;
+        this.XPA = XPA;
+        this.choiceB = choiceB;
+        this.nextSceneB = nextSceneB;
+        this.damageB = damageB;
+        this.XPB = XPB;
+        this.choiceC = choiceC;
+        this.nextSceneC = nextSceneC;
+        this.damageC = damageC;
+        this.XPC = XPC;
     }
 
-    public Scene(String description,
-                 String option1Text, Scene option1Scene, int option1Damage, int option1Score,
-                 String option2Text, Scene option2Scene, int option2Damage, int option2Score,
-                 String option3Text, Scene option3Scene, int option3Damage, int option3Score) {
+    // Constructor khusus ending (gak punya pilihan)
+    public Scene(String description) {
         this.description = description;
-        this.option1Text = option1Text;
-        this.option1Scene = option1Scene;
-        this.option1Damage = option1Damage;
-        this.option1Score = option1Score;
+        this.choiceA = null;
+        this.choiceB = null;
+        this.choiceC = null;
+    }
 
-        this.option2Text = option2Text;
-        this.option2Scene = option2Scene;
-        this.option2Damage = option2Damage;
-        this.option2Score = option2Score;
+    public void setItemForChoices(String itemA, String itemB, String itemC) {
+        this.itemA = itemA;
+        this.itemB = itemB;
+        this.itemC = itemC;
+    }
 
-        this.option3Text = option3Text;
-        this.option3Scene = option3Scene;
-        this.option3Damage = option3Damage;
-        this.option3Score = option3Score;
+    public void displayScene() {
+        System.out.println("\n" + description);
+        if (choiceA != null) {
+            System.out.println("A. " + choiceA);
+            System.out.println("B. " + choiceB);
+            System.out.println("C. " + choiceC);
+        }
+    }
+
+    public Scene makeChoice(String choice, Character player) {
+        if (choiceA == null) return null; // kalau ending scene, langsung selesai
+
+        switch (choice.toUpperCase()) {
+            case "A":
+                player.takeDamage(damageA);
+                player.addXP(XPA);
+                if (itemA != null) player.setItem(itemA);
+                return nextSceneA;
+            case "B":
+                player.takeDamage(damageB);
+                player.addXP(XPB);
+                if (itemB != null) player.setItem(itemB);
+                return nextSceneB;
+            case "C":
+                player.takeDamage(damageC);
+                player.addXP(XPC);
+                if (itemC != null) player.setItem(itemC);
+                return nextSceneC;
+            default:
+                System.out.println("Pilihan tidak valid.");
+                return null;
+        }
+    }
+
+    public boolean isEnding() {
+        return choiceA == null;
     }
 }

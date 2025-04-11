@@ -1,59 +1,61 @@
 import java.util.Scanner;
 
 public class Story {
-    Scene currentScene;
-    Character player;
+    private Scene startScene;
+    private Character player;
+    private Scanner scanner;
 
     public Story(Scene startScene, Character player) {
-        this.currentScene = startScene;
+        this.startScene = startScene;
         this.player = player;
+        this.scanner = new Scanner(System.in);
     }
 
     public void start() {
-        Scanner scanner = new Scanner(System.in);
+        play();
+    }
+
+    public void play() {
+        Scene currentScene = startScene;
+
         while (currentScene != null) {
             System.out.println("\n====================");
-            System.out.println(currentScene.description);
-            if (currentScene.option1Text == null) break;
+            currentScene.displayScene();
 
-            System.out.println("1. " + currentScene.option1Text);
-            System.out.println("2. " + currentScene.option2Text);
-            System.out.println("3. " + currentScene.option3Text);
-            System.out.print("Pilih opsi (1-3): ");
-
-            int choice = scanner.nextInt();
-            switch (choice) {
-                case 1:
-                    player.takeDamage(currentScene.option1Damage);
-                    player.addScore(currentScene.option1Score);
-                    currentScene = currentScene.option1Scene;
-                    break;
-                case 2:
-                    player.takeDamage(currentScene.option2Damage);
-                    player.addScore(currentScene.option2Score);
-                    currentScene = currentScene.option2Scene;
-                    break;
-                case 3:
-                    player.takeDamage(currentScene.option3Damage);
-                    player.addScore(currentScene.option3Score);
-                    currentScene = currentScene.option3Scene;
-                    break;
-                default:
-                    System.out.println("Pilihan tidak valid.");
+            if (currentScene.isEnding()) {
+                break;
             }
 
-            System.out.println("❤️ HP: " + player.health + " | ⭐ Skor: " + player.Xp);
+            System.out.print("Pilih A/B/C atau ketik INFO: ");
+            String input = scanner.nextLine();
 
-            if (player.health <= 0) {
-                System.out.println("Kamu kehabisan HP! GAME OVER.");
+            if (input.equalsIgnoreCase("INFO")) {
+                System.out.println(" HP: " + player.getHealth());
+                System.out.println(" XP: " + player.getXP());
+                System.out.println(" Item: " + (player.getItem() == null ? "-" : player.getItem()));
+                continue;
+            }
+
+            Scene next = currentScene.makeChoice(input, player);
+            
+            // Cek kalau HP habis
+            if (player.getHealth() <= 0) {
+                System.out.println("\n Kamu kehabisan HP. GAME OVER!");
                 break;
+            }
+
+            if (next == null) {
+                System.out.println("Pilihan tidak valid, coba lagi!");
+            } else {
+                currentScene = next;
             }
         }
 
+        // Akhir permainan
         System.out.println("\n=== AKHIR PERMAINAN ===");
-        System.out.println("Nama: " + player.name);
-        System.out.println("Skor akhir: " + player.Xp);
-        System.out.println("HP akhir: " + player.health);
-        System.out.println("Item akhir: " + player.Item);
+        System.out.println("Nama: " + player.getName());
+        System.out.println("HP: " + player.getHealth());
+        System.out.println("XP: " + player.getXP());
+        System.out.println("Item: " + (player.getItem() == null ? "-" : player.getItem()));
     }
 }
