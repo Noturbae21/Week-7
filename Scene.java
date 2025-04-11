@@ -1,3 +1,5 @@
+    // atribut dari scene
+
 public class Scene {
     private String description;
     private String choiceA, choiceB, choiceC;
@@ -6,7 +8,11 @@ public class Scene {
     private int XPA, XPB, XPC;
     private String itemA, itemB, itemC;
 
-    // Constructor untuk scene biasa
+    // end atribut scene
+
+    //Counstructor untuk scene dengan pilihan
+
+    // Constructor untuk scene biasa 1.
     public Scene(String description,
                  String choiceA, Scene nextSceneA, int damageA, int XPA,
                  String choiceB, Scene nextSceneB, int damageB, int XPB,
@@ -26,7 +32,13 @@ public class Scene {
         this.XPC = XPC;
     }
 
-    // Constructor khusus ending (gak punya pilihan)
+    // Constructor khusus ending (gak punya pilihan)2.
+
+    // end constructor
+
+
+    // method
+    // Method untuk scene ending
     public Scene(String description) {
         this.description = description;
         this.choiceA = null;
@@ -34,11 +46,14 @@ public class Scene {
         this.choiceC = null;
     }
 
+    // Method untuk scene biasa
     public void setItemForChoices(String itemA, String itemB, String itemC) {
         this.itemA = itemA;
         this.itemB = itemB;
         this.itemC = itemC;
     }
+
+    //Method (ini ditampilkan di terminal)
 
     public void displayScene() {
         System.out.println("\n" + description);
@@ -48,6 +63,8 @@ public class Scene {
             System.out.println("C. " + choiceC);
         }
     }
+
+    //Metod Kalo ending selesai
 
     public Scene makeChoice(String choice, Character player) {
         if (choiceA == null) return null; // kalau ending scene, langsung selesai
@@ -77,4 +94,4 @@ public class Scene {
     public boolean isEnding() {
         return choiceA == null;
     }
-}
+}   //Selesai Method
